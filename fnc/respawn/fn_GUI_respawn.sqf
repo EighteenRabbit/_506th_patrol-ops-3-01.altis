@@ -1,0 +1,7 @@
+/*
+	Author: Eightysix
+
+	Description:
+
+*/
+disableSerialization;

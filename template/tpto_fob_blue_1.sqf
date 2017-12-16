@@ -1,0 +1,1 @@
+player setPos [(getPos Flag_1 select 0)+0, (getPos Flag_1 select 1)-2, getPos Flag_1 select 2];
