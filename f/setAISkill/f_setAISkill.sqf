@@ -8,7 +8,7 @@ if !(isServer) exitWith {};
 // WAIT FOR THE MISSION TO BEGIN
 // By waiting a few seconds into the mission the server is giving time to settle and it assures that the component catches AI created during init
 
-sleep 2;
+sleep 10;
 
 // ====================================================================================
 

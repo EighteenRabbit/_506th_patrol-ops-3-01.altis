@@ -75,7 +75,7 @@ if (typeName _skillset == typeName false) then {
 			case "rhsgref_faction_chdkz_g": {f_var_skillIndM};		// ChDKZ Insurgents
 			case "rhsgref_faction_nationalist": {f_var_skillIndM};	// Nationalist
 			case "rhs_faction_insurgents": {f_var_skillIndM};		// Eastern Militia
-			case "506th_eereb_faction": {f_var_skillIndM};			// Eastern European Rebels
+			// case "506th_eereb_faction": {f_var_skillIndM};			// Eastern European Rebels
 			
 		// Civilians
 			case "civ_f": {f_var_skillCiv};		// Civilians

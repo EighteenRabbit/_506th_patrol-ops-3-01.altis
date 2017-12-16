@@ -1,18 +1,18 @@
 /*
-CHANGELOG
-
-06JAN14
-- Changed to patchless uniform
+this addAction ["Clear Loadout", "scripts\clear_loadout.sqf", [],6,true,true,"","_this distance _target < 5"];
 */
 
+_unit = _this select 1;
      
-removeallweapons player;
-removeallassigneditems player;
-removeuniform player;
-removevest player;
-removebackpack player;
-removeheadgear player;
-removebackpack player;
-removegoggles player;
-player adduniform "rhs_uniform_cu_ocp_101st";
+if (!local _unit) exitWith {};
+     
+removeallweapons _unit;
+removeallassigneditems _unit;
+removeuniform _unit;
+removevest _unit;
+removebackpack _unit;
+removeheadgear _unit;
+removebackpack _unit;
+removegoggles _unit;
+_unit adduniform "rhs_uniform_cu_ocp_101st";
 
