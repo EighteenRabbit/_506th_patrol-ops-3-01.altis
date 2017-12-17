@@ -46,3 +46,35 @@ if(!isDedicated) then {
 ["PO3_taskmaster"] call PO3_fnc_runTaskSequence;
 
 [] call PO3_fnc_outrosequence;
+
+// init.sqf
+// � OCTOBER 2011 - norrin
+////////////////////////////Code specific for aerial taxi scripts//////////////////////////////
+// Add the following line for MP games
+if (!isServer) then {while {isNull player} do {Sleep 0.1}};
+// Start heli taxi scripts
+// [slick1,escort1] execVM "scripts\heloGoTo\heliTaxi_init.sqf";
+[slick1] execVM "scripts\heloGoTo\heliTaxi_init.sqf";
+// For extraction action at start-up
+player setVariable ["NORRN_taxiHeli", slick1, true];
+// Set this var to true if you do not want the taxi or escort to respawn
+//NORRN_aerialTaxiRespawnOff = true;
+// Set these vars to true if you do not downed chopper or chopper crew deleted
+NORRN_FR_keepOldCrew = true;
+NORRN_FR_keepOldHeli = true;
+///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////Cam scripts - not required for aerial taxi scripts///////////////////////
+[player]execVM "NORRN_cam\start_cam.sqf";
+///////////////////////////////////////////////////////////////////////////////////////
+//////////////////Optional code for testing - not required for aerial taxi scripts//////////////////
+private ["_units"];
+// optional code:  make driver of slick1, slick1 and player immune to damage for testing scripts
+slick1 allowDamage false;
+{_x allowDamage false} forEach crew slick1;
+escort1 allowDamage false;
+{_x allowDamage false} forEach crew escort1;
+//player allowDamage false;
+// optional code: move player's group into chopper - local server or SP only
+//_units = units (group player);
+//{_x moveInCargo slick1} forEach _units;
+///////////////////////////////////////////////////////////////////////////////////////
