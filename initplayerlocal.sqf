@@ -3,11 +3,11 @@ waituntil {! isnull player};
 
 
 // Reserved if needed
-if (player == player) then { 
+if (player == player) then {
 } else {};
 
-execVM "scripts\Ground_List.sqf";
-execVM "scripts\Air_List.sqf";
+//execVM "scripts\Ground_List.sqf";
+//execVM "scripts\Air_List.sqf";
 //execVM "scripts\Boat_List.sqf";
 
 
@@ -20,3 +20,6 @@ Skip1 = Flag_1 addAction ["Skip Current Task", "Call PO3_fnc_SkipTask", [], 6, F
 
 deploy2 = haloFlag addAction ["Marina Base S","Scripts\Teleport.sqf",["redeploy_west_marine"]];
 deploy3 = haloFlag addAction ["Marina Base N","Scripts\Teleport.sqf",["redeploy_west_marine_1"]];
+
+null = [auto_phoenix,auto_warlord] execVM "scripts\heloGoTo\heloGoTo_init.sqf";
+player setVariable ["NORRN_taxiHeli", auto_phoenix, true];

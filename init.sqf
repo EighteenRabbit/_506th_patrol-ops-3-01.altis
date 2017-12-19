@@ -21,9 +21,12 @@ if(!isDedicated) then {
 };
 
 //External Logistics (Future Mod Support)
-	[] execVM "scripts\IgiLoad\IgiLoadInit.sqf";;
+[] execVM "scripts\IgiLoad\IgiLoadInit.sqf";
 
 ["PO3_taskmaster"] call PO3_fnc_runTaskSequence;
 
 [] call PO3_fnc_outrosequence;
 
+if (!isServer) then {while {isNull player} do {Sleep 0.1}};
+null = [auto_phoenix,auto_warlord] execVM "scripts\heloGoTo\heloGoTo_init.sqf";
+player setVariable ["NORRN_taxiHeli", auto_phoenix, true];
