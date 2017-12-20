@@ -3,8 +3,9 @@ TF_give_personal_radio_to_regular_soldier = true;
 tf_no_auto_long_range_radio = true;
 
 //Marina TP to home
-fob_blue addAction ["To Base", "template\tpto_fob_blue_1.sqf"];
-fob_blue_1 addAction ["To Base", "template\tpto_fob_blue_1.sqf"];
+fob_blue_1 addAction ["To FOB Shifty", "template\tpto_fob_blue.sqf"];
+fob_blue_2 addAction ["To FOB Shifty", "template\tpto_fob_blue.sqf"];
+haloFlag addAction ["To Airfield", "template\tpto_fob_blue_1.sqf"];
 
 ["INIT",format["Executing %1 init.sqf",missionName],true] call PO3_fnc_log;
 
