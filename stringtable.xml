@@ -486,10 +486,10 @@
 	</Package>
 	<Package name="MPSFHeader">
 		<Key ID="STR_MISSION_AUTHOR">
-			<Original>2LT Burke and CPL Hardman.  (oringaly by SPC O. Thomas)</Original>
+			<Original>506th Mission Team</Original>
 		</Key>
 		<Key ID="STR_MISSION_NAME">
-			<Original>506th Patrol Ops 3.1 (BETA)</Original>
+			<Original>Patrol Ops</Original>
 		</Key>
 		<Key ID="STR_MISSION_DESC">
 			<Original>Patrol Operations is a dynamic mission generator with random objectives designed for combined arms co-operative tactical gameplay by larger groups of players.</Original>

@@ -1,1 +1,1 @@
-player setPos [(getPos haloFlag select 0)+0, (getPos haloFlag select 1)-2, getPos haloFlag select 2];
+player setPos [(getPos Flag_1 select 0)+0, (getPos Flag_1 select 1)-2, getPos Flag_1 select 2];
