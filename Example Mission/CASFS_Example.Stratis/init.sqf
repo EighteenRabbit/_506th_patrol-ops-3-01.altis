@@ -1,0 +1,1 @@
+execVM "JWC_CASFS\initCAS.sqf";

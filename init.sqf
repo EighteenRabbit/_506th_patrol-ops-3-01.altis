@@ -7,9 +7,12 @@ fob_blue_1 addAction ["To FOB Shifty", "template\tpto_fob_blue.sqf"];
 fob_blue_2 addAction ["To FOB Shifty", "template\tpto_fob_blue.sqf"];
 haloFlag addAction ["To Airfield", "template\tpto_fob_blue_1.sqf"];
 
+
 ["INIT",format["Executing %1 init.sqf",missionName],true] call PO3_fnc_log;
 
 [] execVM "Patrol_Ops_3.sqf";
+
+[] execVM "JWC_CASFS\initCAS.sqf";  // CAS Script
 
 [] execVM "f\setAISKill\f_setAISkill.sqf";
 
