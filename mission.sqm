@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14447.187,38.057903,16237.622};
-		dir[]={-0.82548499,-0.315761,0.46806329};
-		up[]={-0.27476832,0.94878918,0.15580101};
-		aside[]={0.49330398,1.3062381e-006,0.86999506};
+		pos[]={15175.005,24.4415,17353.525};
+		dir[]={0.41158038,-0.46369332,0.78473389};
+		up[]={0.21541265,0.88593751,0.41070709};
+		aside[]={0.88569069,1.701701e-006,-0.46453306};
 	};
 };
 binarizationWanted=0;
@@ -363,7 +363,10 @@ class ScenarioData
 	briefing=0;
 	debriefing=0;
 	saving=0;
+	respawnDialog=0;
 	disabledAI=1;
+	respawn=3;
+	respawnDelay=10;
 	class Header
 	{
 		gameType="Coop";
@@ -391,10 +394,47 @@ class CustomAttributes
 							"ARRAY"
 						};
 					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
+						};
+					};
 				};
 			};
 		};
-		nAttributes=1;
+		class Attribute1
+		{
+			property="Enh_saveLoadout";
+			expression="      if (!is3DEN && hasInterface && _value) then      {         [] spawn         {            waitUntil {sleep 1; !isNull player};            if (isNil {player getVariable 'Enh_savedLoadout'}) then            {               player setVariable ['Enh_savedLoadout',getUnitloadout player];               player addEventHandler ['Respawn',{player setUnitLoadout (player getVariable 'Enh_savedLoadout')}];            };         };      };   ";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=2;
 	};
 	class Category1
 	{
@@ -1548,7 +1588,7 @@ class Mission
 			};
 			id=110;
 			type="Box_NATO_AmmoVeh_F";
-			atlOffset=0.025856256;
+			atlOffset=0.010370731;
 		};
 		class Item82
 		{
@@ -18417,23 +18457,41 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15177.996,18.716688,17363.691};
-				angles[]={6.2751846,0.82192945,0.0013372133};
+				position[]={15177.996,18.716692,17363.691};
+				angles[]={6.2751913,0.82192785,0.0013439035};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction [""Clear Loadout"", ""scripts\clear_loadout.sqf"", [],6,true,true,"""",""_this distance _target < 5""]; null = [this] execVM ""scripts\box_virtualarsenal.sqf"";";
+				init="call{this addAction [""Clear Loadout"", ""scripts\clear_loadout.sqf"", [],6,true,true,"""",""_this distance _target < 5""];" \n "" \n "null = [this] execVM ""scripts\box_virtualarsenal.sqf"";}";
 				name="arsenal_1";
 			};
 			id=453;
 			type="Box_NATO_AmmoVeh_F";
-			atlOffset=-3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
 				{
 					property="ammoBox";
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
@@ -18452,7 +18510,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute1
+				class Attribute2
 				{
 					property="ace_isMedicalFacility";
 					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
@@ -18471,7 +18529,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=2;
+				nAttributes=3;
 			};
 		};
 		class Item148
@@ -18497,23 +18555,42 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15183.863,18.755001,17357.631};
-				angles[]={6.2818937,3.9635222,0};
+				position[]={15183.863,18.75532,17357.631};
+				angles[]={6.2818937,3.9635205,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction [""Clear Loadout"", ""scripts\clear_loadout.sqf"", [],6,true,true,"""",""_this distance _target < 5""]; null = [this] execVM ""scripts\box_virtualarsenal.sqf"";";
+				init="call{this addAction [""Clear Loadout"", ""scripts\clear_loadout.sqf"", [],6,true,true,"""",""_this distance _target < 5""];" \n "" \n "null = [this] execVM ""scripts\box_virtualarsenal.sqf"";}";
 				name="arsenal_2";
 			};
 			id=455;
 			type="Box_NATO_AmmoVeh_F";
-			atlOffset=0.051681519;
+			atlOffset=0.052000046;
 			class CustomAttributes
 			{
 				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
 				{
 					property="ammoBox";
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
@@ -18532,7 +18609,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute1
+				class Attribute2
 				{
 					property="ace_isMedicalFacility";
 					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
@@ -18551,7 +18628,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=2;
+				nAttributes=3;
 			};
 		};
 		class Item150
