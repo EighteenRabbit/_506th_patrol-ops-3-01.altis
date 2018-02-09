@@ -1,18 +1,13 @@
-
-
-
 _run = true;
-
-// Start loop	
-while {_run} do {	
-if (isServer) then {
+while {_run} do {
+	if (isServer) then {
 		_crate = _this select 0;
-	 
-		clearMagazineCargoGlobal _crate;  
+
+		clearMagazineCargoGlobal _crate;
 		clearBackpackCargoGlobal _crate;
-		clearWeaponCargoGlobal _crate;    
+		clearWeaponCargoGlobal _crate;
 		clearItemCargoGlobal _crate;
-	 
+
 		_crate addItemCargoGlobal ["ACE_Vector",50];
 		_crate addItemCargoGlobal ["ACE_MX2A",50];
 		_crate addItemCargoGlobal ["lerca_1200_black",50];
@@ -21,8 +16,7 @@ if (isServer) then {
 		_crate addItemCargoGlobal ["ItemRadio",100];
 		_crate addItemCargoGlobal ["ItemSMGR", 50];
 		_crate addMagazineCargoGlobal["Laserbatteries", 50];
-				
+
 	};
-// Refill or end loop				
-sleep 1800;
+	sleep 1800;
 };

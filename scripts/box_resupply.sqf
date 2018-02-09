@@ -1,8 +1,4 @@
-
-/*
-null = [this] execVM "box_resupply.sqf"
-*/
-
+// null = [this] execVM "box_resupply.sqf"
 _box = _this select 0;
 
 clearWeaponCargoGlobal _box;
