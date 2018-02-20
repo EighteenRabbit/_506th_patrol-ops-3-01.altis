@@ -4,6 +4,7 @@ waituntil {! isnull player};
 
 // Reserved if needed
 if (player == player) then {
+    view = player addAction ["Settings", "scripts\Viewdistance.sqf", [],-98,false,false];
 } else {};
 
 //execVM "scripts\Ground_List.sqf";
