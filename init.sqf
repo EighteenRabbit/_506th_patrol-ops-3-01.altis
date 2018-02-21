@@ -1,7 +1,3 @@
-//TFAR Options
-TF_give_personal_radio_to_regular_soldier = true;
-tf_no_auto_long_range_radio = true;
-
 //Marina TP to home
 fob_blue_1 addAction ["To FOB Shifty", "template\tpto_fob_blue.sqf"];
 fob_blue_2 addAction ["To FOB Shifty", "template\tpto_fob_blue.sqf"];
@@ -34,3 +30,11 @@ if(!isDedicated) then {
 if (!isServer) then {while {isNull player} do {Sleep 0.1}};
 null = [auto_phoenix,auto_warlord] execVM "scripts\heloGoTo\heloGoTo_init.sqf";
 player setVariable ["NORRN_taxiHeli", auto_phoenix, true];
+
+// Wait until postInit has run because the TFAR settings don't work before then
+waitUntil {time > 2};
+// The set TFAR Options that are ignored in description.ext and the ACE/CBA options
+// No automatic long range radio
+["TF_no_auto_long_range_radio", true, true, "mission"] call CBA_settings_fnc_set;
+// No personal radios
+["TF_give_personal_radio_to_regular_soldier", false, true, "mission"] call CBA_settings_fnc_set;

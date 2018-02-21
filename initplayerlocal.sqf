@@ -1,11 +1,26 @@
 waituntil {! isnull player};
 
-
-
-// Reserved if needed
+// When a player logs in remove all gear from player and add only what is needed
 if (player == player) then {
-    view = player addAction ["Settings", "scripts\Viewdistance.sqf", [],-98,false,false];
-} else {};
+	// Remove the default RHS loadout
+	removeallweapons player;
+	removeallassigneditems player;
+	removeuniform player;
+	removevest player;
+	removebackpack player;
+	removeheadgear player;
+	removebackpack player;
+	removegoggles player;
+
+	// Set baseline 101st Uniform and Patrol Cap
+	player forceAddUniform "rhs_uniform_cu_ocp_101st";
+	player addHeadgear "rhsusf_patrolcap_ocp";
+	player additem "ItemMap";
+	player assignItem "ItemMap";
+
+	// Set the view distance settings
+	view = player addAction ["Settings", "scripts\Viewdistance.sqf", [],-98,false,false];
+ } else {};
 
 //execVM "scripts\Ground_List.sqf";
 //execVM "scripts\Air_List.sqf";

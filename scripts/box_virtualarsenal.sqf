@@ -1,17 +1,17 @@
-/*
+/* 
 null = [this] execVM "scripts\box_virtualarsenal.sqf";
 */
 
 _crate = _this select 0;
 ["AmmoboxInit",[_crate,false,{true}]] spawn BIS_fnc_arsenal;
-
+ 
 //Lists of items to include
 _availableHeadgear = [
-	"rhsusf_ach_helmet_headset_ess_ocp",
-	"rhsusf_ach_helmet_ocp",
-	"rhsusf_ach_helmet_ocp_norotos",
-	"rhsusf_ach_helmet_ESS_ocp",
-	"rhsusf_ach_helmet_headset_ocp",
+	"rhsusf_ach_helmet_headset_ess_ocp", 
+	"rhsusf_ach_helmet_ocp", 
+	"rhsusf_ach_helmet_ocp_norotos", 
+	"rhsusf_ach_helmet_ESS_ocp", 
+	"rhsusf_ach_helmet_headset_ocp", 
 	"rhsusf_hgu56p",
 	"rhsusf_hgu56p_mask",
 	"H_CrewHelmetHeli_B",
@@ -28,7 +28,7 @@ _availableHeadgear = [
 	"506th_rhsusf_patrolcap_abu"
 
 ];
-
+ 
 _availableGoggles = [
 	"G_Shades_Black",
 	"G_Shades_Blue",
@@ -42,16 +42,16 @@ _availableGoggles = [
 	"rhs_googles_black",
 	"rhs_ess_black"
 ];
-
+ 
 _availableUniforms = [
 	"rhs_uniform_cu_ocp_101st",
-	"U_B_PilotCoveralls",
-	"U_B_HeliPilotCoveralls",
-	"U_I_pilotCoveralls",
+	"U_B_PilotCoveralls", 
+	"U_B_HeliPilotCoveralls", 
+	"U_I_pilotCoveralls", 
 	"LOP_U_UKR_Fatigue_DF15",
 	"LOP_U_IRAN_Fatigue_DF15"
 ];
-
+ 
 _availableVests = [
 	"rhsusf_iotv_ocp",
 	"rhsusf_iotv_ocp_Repair",
@@ -64,9 +64,9 @@ _availableVests = [
 	"rhsusf_spcs_ocp_rifleman",
 	"rhsusf_spcs_ocp",
 	"BDF_AirForceheli_vest",
-	"V_TacVest_oli"
+	"V_TacVest_oli" 
 ];
-
+ 
 _availableBackpacks = [
 	"rhsusf_assault_eagleaiii_ocp",
 	"B_Mortar_01_support_F",
@@ -84,7 +84,7 @@ _availableBackpacks = [
 	"B_AssaultPack_cbr",
 	"B_UAV_01_backpack_F"
 ];
-
+ 
 _availableItems = [
 	"acc_pointer_IR", // Day Visible Laser
 	"ACE_Altimeter",
@@ -167,14 +167,14 @@ _availableAccessories = [
 	"FHQ_optic_AimM_BLK",
 	"FHQ_optic_TWS3050",
 	"rhsusf_acc_LEUPOLDMK4_2",
-	"RH_ta31rmr",
-	"RH_ta31rmr_2D",
+	"RH_ta31rmr", 
+	"RH_ta31rmr_2D", 
 	"optic_tws",
 	"optic_tws_mg",
-	"optic_LRPS"
+	"optic_LRPS" 
 
 ];
-
+ 
 _availableMagazines = [
 	"ACE_HuntIR_M203",
 	"30Rnd_556x45_Stanag",
@@ -186,7 +186,7 @@ _availableMagazines = [
 	"rhsusf_8Rnd_00Buck",
 	"rhsusf_8Rnd_Slug",
 	"rhsusf_20Rnd_762x51_m118_special_Mag",
-	"rhsusf_100Rnd_762x51",
+	"rhsusf_100Rnd_762x51", 
 	"rhsusf_100Rnd_762x51_m80a1epr",
 	"rhsusf_100Rnd_762x51_m993",
 	"rhsusf_100Rnd_556x45_soft_pouch",
@@ -211,7 +211,7 @@ _availableMagazines = [
 	"ACE_SpareBarrel"
 ];
 
-_availableGrenades = [
+_availableGrenades = [ 
 	"DemoCharge_Remote_Mag",
 	"SatchelCharge_Remote_Mag",
 	"ClaymoreDirectionalMine_Remote_Mag",
@@ -237,9 +237,9 @@ _availableGrenades = [
 	"ACE_M84",
 	"HandGrenade",
 	"Chemlight_green",
-	"Chemlight_red",
+	"Chemlight_red", 
 	"Chemlight_blue",
-	"Chemlight_yellow",
+	"Chemlight_yellow", 
 	"B_IR_Grenade"
 ];
 
@@ -272,7 +272,7 @@ _availableWeapons = [
 	"Binocular",
 	"rhs_weap_sr25"
 ];
-
+ 
 // Populate with predefined items and whatever is already in the crate
 [_crate,((backpackCargo _crate) + _availableBackpacks)] call BIS_fnc_addVirtualBackpackCargo;
 [_crate,((itemCargo _crate) + _availableHeadgear + _availableGoggles + _availableUniforms + _availableVests + _availableItems + _availableAccessories)] call BIS_fnc_addVirtualItemCargo;
